@@ -86,7 +86,7 @@ configuration_options = {
     {
         name = "cfgRecipeTech",
         label = "Recipe Tech",
-        hover = "Crafting building requiremnt.",
+        hover = "Crafting building requirement.",
         options = {
             {description = "None", data = 1},
             {description = "Science Machine", data = 2},
