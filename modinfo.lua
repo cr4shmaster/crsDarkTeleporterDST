@@ -1,14 +1,9 @@
--- Use the Dark Teleporter to create shortcuts or secret entrances. When stepped on, 
---  it teleports your character to the closest other Dark Teleporter. It does not 
---  get activated if a Hammer is equipped. It is deactivated for a few seconds after being used.
+-- More information here: https://sites.google.com/view/cr4shmaster/dark-teleporter-ds-dst
 
--- Workshop Page: http://steamcommunity.com/sharedfiles/filedetails/?id=
--- Author: cr4shmaster: http://steamcommunity.com/id/cr4shmaster
-
-name = "Dark Teleporter v1.1"
+name = "Dark Teleporter v1.0.1.2"
 description = "A super cool teleporter."
 author = "cr4shmaster"
-version = "1.0.1"
+version = "1.0.1.2"
 forumthread = ""
 api_version = 10
 all_clients_require_mod = true
@@ -121,7 +116,7 @@ configuration_options = {
         default = 5,
     },
     {
-        name = "cfgDTHeathCost",
+        name = "cfgDTHealthCost",
         label = "Max Damage On Use",
         hover = "The maximum amount of damage the player will take when using the Teleporter.",
         options = crsDamage,
@@ -147,13 +142,5 @@ configuration_options = {
         hover = "How close to the Teleporter do the players need to be to activate it.",
         options = crsRadius,
         default = .5,
-    },
-    {
-        name = "cfgTestCheck",
-        label = "Installed",
-        options = {
-            {description = "Yes", data = true},
-        },
-        default = true,
     },
 }

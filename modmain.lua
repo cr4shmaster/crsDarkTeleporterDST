@@ -14,7 +14,6 @@ RECIPETABS = GLOBAL.RECIPETABS
 Recipe = GLOBAL.Recipe
 Ingredient = GLOBAL.Ingredient
 TECH = GLOBAL.TECH
-IsDLCEnabled = GLOBAL.IsDLCEnabled
 getConfig = GetModConfigData
 GetPlayer = GLOBAL.GetPlayer
 FindEntity = GLOBAL.FindEntity
@@ -67,7 +66,7 @@ darkteleporter.atlas = "images/inventoryimages/darkteleporter.xml"
 
 local radius = GetModConfigData("cfgDTRadius")
 local range = GetModConfigData("cfgDTRange")
-local healthCost = GetModConfigData("cfgDTHeathCost")
+local healthCost = GetModConfigData("cfgDTHeathlCost")
 local cooldown = GetModConfigData("cfgDTCooldown")
 
 AddPrefabPostInit("darkteleporter", function (inst)
