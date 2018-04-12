@@ -1,9 +1,9 @@
 -- More information here: https://sites.google.com/view/cr4shmaster/dark-teleporter-ds-dst
 
-name = "Dark Teleporter v1.0.1.2"
+name = "Dark Teleporter v1.0.1.4"
 description = "A super cool teleporter."
 author = "cr4shmaster"
-version = "1.0.1.2"
+version = "1.0.1.4"
 forumthread = ""
 api_version = 10
 all_clients_require_mod = true
@@ -97,50 +97,51 @@ configuration_options = {
     {
         name = "cfgMarble",
         label = "Marble",
-        hover = "The amount of Marble needed for crafting the Teleporter.",
         options = crsIngredient,
         default = 3,
     },
     {
         name = "cfgGems",
         label = "Purple Gems",
-        hover = "The number of Purple Gems needed for crafting the Teleporter.",
         options = crsIngredient,
         default = 1,
     },
     {
         name = "cfgFuel",
         label = "Nightmare Fuel",
-        hover = "The amount of Nightmare Fuel needed for crafting the Teleporter.",
         options = crsIngredient,
         default = 5,
     },
     {
         name = "cfgDTHealthCost",
         label = "Max Damage On Use",
-        hover = "The maximum amount of damage the player will take when using the Teleporter.",
         options = crsDamage,
         default = 30,
     },
     {
         name = "cfgDTCooldown",
         label = "On Use Disable For",
-        hover = "The amount of time (in seconds) that the Teleporter will be temporarily disabled for after being used.",
         options = crsDuration,
         default = 20,
     },
     {
         name = "cfgDTRange",
         label = "Teleport Range",
-        hover = "The maximum range of the Teleporter.",
         options = crsRange,
         default = 20,
     },
     {
         name = "cfgDTRadius",
         label = "Activation Radius",
-        hover = "How close to the Teleporter do the players need to be to activate it.",
         options = crsRadius,
         default = .5,
+    },
+    {
+        name = "cfgTestCheck",
+        label = "Installed",
+        options = {
+            {description = "Yes", data = true},
+        },
+        default = true,
     },
 }
