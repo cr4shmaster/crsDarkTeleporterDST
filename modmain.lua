@@ -1,16 +1,12 @@
-PrefabFiles = {
-    "darkteleporter",
-}
+PrefabFiles = {"darkteleporter",}
 
 Assets = {
     Asset("ATLAS", "images/inventoryimages/darkteleporter.xml"),
-    Asset("IMAGE", "images/inventoryimages/darkteleporter.tex"),
     Asset("ATLAS", "minimap/darkteleporter.xml"),
-    Asset("IMAGE", "minimap/darkteleporter.tex"),
 }
 
 local STRINGS = GLOBAL.STRINGS
-local RECIPETABS = GLOBAL.RECIPETABS
+local REC = GLOBAL.RECIPETABS
 local Recipe = GLOBAL.Recipe
 local Ingredient = GLOBAL.Ingredient
 local TECH = GLOBAL.TECH
@@ -28,15 +24,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER = "Teleportation is awesome!"
 
 -- RECIPES --
 
-local crsRecipeTabs = {
-    RECIPETABS.TOOLS,
-    RECIPETABS.SURVIVAL,
-    RECIPETABS.FARM,
-    RECIPETABS.SCIENCE,
-    RECIPETABS.TOWN,
-    RECIPETABS.REFINE,
-    RECIPETABS.MAGIC,
-}
+local crsRecipeTabs = {REC.TOOLS, REC.SURVIVAL, REC.FARM, REC.SCIENCE, REC.TOWN, REC.REFINE, REC.MAGIC,}
 local recipeTab = crsRecipeTabs[getConfig("cfgRecipeTab")]
 
 local crsRecipeTechs = {

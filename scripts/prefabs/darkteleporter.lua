@@ -1,6 +1,4 @@
-local assets = {
-    Asset("ANIM", "anim/darkteleporter.zip"),
-}
+local assets = {Asset("ANIM", "anim/darkteleporter.zip")}
 
 local getConfig = GetModConfigData
 local crsDarkTeleporterDST = getConfig("cfgTestCheck", "workshop-941067360") and "workshop-941067360" or "crsDarkTeleporterDST"
@@ -23,20 +21,20 @@ end
 local function fn(Sim)
     local inst = CreateEntity()
     inst.entity:AddTransform()
-    inst.entity:AddNetwork()
     inst.entity:AddAnimState()
+    inst.entity:AddNetwork()
     inst.AnimState:SetBank("darkteleporter")
     inst.AnimState:SetBuild("darkteleporter")
     inst.AnimState:PlayAnimation("idle", true)
     inst.entity:AddSoundEmitter()
+    
     inst:AddTag("crsDarkTeleporter")
+
     local minimap = inst.entity:AddMiniMapEntity()
     minimap:SetIcon("darkteleporter.tex")
 
     inst.entity:SetPristine()
-    if not TheWorld.ismastersim then
-        return inst
-    end
+    if not TheWorld.ismastersim then return inst end
     
     inst:AddComponent("inspectable")
     inst:AddComponent("lootdropper")
