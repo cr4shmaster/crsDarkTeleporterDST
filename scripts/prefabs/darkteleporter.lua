@@ -77,11 +77,11 @@ local function crsDarkTeleporterFn (col)
         return inst
     end
 
-    return Prefab("common/objects/darkteleporter_"..col, fn, assets),
-        MakePlacer("common/darkteleporter_"..col.."_placer", "darkteleporter", "darkteleporter", col)
+    return Prefab("common/objects/darkteleporter_"..col, fn, assets)
 end
 
 return crsDarkTeleporterFn("red"),
     crsDarkTeleporterFn("green"),
     crsDarkTeleporterFn("blue"),
-    crsDarkTeleporterFn("yellow")
+    crsDarkTeleporterFn("yellow"),
+    MakePlacer("common/darkteleporter_placer", "darkteleporter", "darkteleporter", "red")

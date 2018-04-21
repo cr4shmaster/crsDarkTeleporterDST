@@ -55,7 +55,7 @@ local recipeTech = crsRecipeTechs[getConfig("cfgRecipeTech")]
 
 local function crsAddRecipe(col)
     local mats = {Ingredient("marble", getConfig("cfgMarble")), Ingredient("purplegem", getConfig("cfgGems")), Ingredient("nightmarefuel", getConfig("cfgFuel"))}
-    return AddRecipe("darkteleporter_"..col, mats, recipeTab, recipeTech, "darkteleporter_"..col.."_placer", nil, nil, nil, nil, "images/inventoryimages/darkteleporter_"..col..".xml")
+    return AddRecipe("darkteleporter_"..col, mats, recipeTab, recipeTech, "darkteleporter_placer", nil, nil, nil, nil, "images/inventoryimages/darkteleporter_"..col..".xml")
 end
 -- add recipes
 crsAddRecipe("red") crsAddRecipe("green") crsAddRecipe("blue") crsAddRecipe("yellow")
