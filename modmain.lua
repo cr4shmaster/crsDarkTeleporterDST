@@ -1,9 +1,12 @@
-PrefabFiles = {"darkteleporter",}
+PrefabFiles = {"darkteleporter"}
 
-Assets = {
-    Asset("ATLAS", "images/inventoryimages/darkteleporter.xml"),
-    Asset("ATLAS", "minimap/darkteleporter.xml"),
-}
+local crsDTColors = {"red", "green", "blue", "yellow"}
+
+Assets = {}
+for k=1, #crsDTColors, 1 do 
+	table.insert(Assets, Asset("ATLAS", "images/inventoryimages/darkteleporter_"..crsDTColors[k]..".xml"))
+	table.insert(Assets, Asset("ATLAS", "minimap/darkteleporter_"..crsDTColors[k]..".xml"))
+end
 
 local STRINGS = GLOBAL.STRINGS
 local REC = GLOBAL.RECIPETABS
@@ -14,13 +17,24 @@ local getConfig = GetModConfigData
 
 -- MAP ICONS --
 
-AddMinimapAtlas("minimap/darkteleporter.xml")
+for k=1, #crsDTColors, 1 do
+	AddMinimapAtlas("minimap/darkteleporter_"..crsDTColors[k]..".xml")
+end
 
 -- STRINGS --
 
-STRINGS.NAMES.DARKTELEPORTER = "Dark Teleporter"
-STRINGS.RECIPE_DESC.DARKTELEPORTER = "Teleports you close by."
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER = "Teleportation is awesome!"
+STRINGS.NAMES.DARKTELEPORTER_RED = "Red Dark Teleporter"
+STRINGS.RECIPE_DESC.DARKTELEPORTER_RED = "Teleports you close by."
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER_RED = "Teleportation is awesome!"
+STRINGS.NAMES.DARKTELEPORTER_GREEN = "Green Dark Teleporter"
+STRINGS.RECIPE_DESC.DARKTELEPORTER_GREEN = "Teleports you close by."
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER_GREEN = "Teleportation is awesome!"
+STRINGS.NAMES.DARKTELEPORTER_BLUE = "Blue Dark Teleporter"
+STRINGS.RECIPE_DESC.DARKTELEPORTER_BLUE = "Teleports you close by."
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER_BLUE = "Teleportation is awesome!"
+STRINGS.NAMES.DARKTELEPORTER_YELLOW = "Yellow Dark Teleporter"
+STRINGS.RECIPE_DESC.DARKTELEPORTER_YELLOW = "Teleports you close by."
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER_YELLOW = "Teleportation is awesome!"
 
 -- RECIPES --
 
@@ -39,9 +53,9 @@ local crsRecipeTechs = {
 }
 local recipeTech = crsRecipeTechs[getConfig("cfgRecipeTech")]
 
-local darkteleporter = AddRecipe("darkteleporter", {
-    Ingredient("marble", getConfig("cfgMarble")),
-    Ingredient("purplegem", getConfig("cfgGems")),
-    Ingredient("nightmarefuel", getConfig("cfgFuel")),
-}, recipeTab, recipeTech, "darkteleporter_placer")
-darkteleporter.atlas = "images/inventoryimages/darkteleporter.xml"
+local function crsAddRecipe(col)
+    local mats = {Ingredient("marble", getConfig("cfgMarble")), Ingredient("purplegem", getConfig("cfgGems")), Ingredient("nightmarefuel", getConfig("cfgFuel"))}
+    return AddRecipe("darkteleporter_"..col, mats, recipeTab, recipeTech, "darkteleporter_"..col.."_placer", nil, nil, nil, nil, "images/inventoryimages/darkteleporter_"..col..".xml")
+end
+-- add recipes
+crsAddRecipe("red") crsAddRecipe("green") crsAddRecipe("blue") crsAddRecipe("yellow")
